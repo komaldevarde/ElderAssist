@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElderAssist – Dedicated Service for the Elderly</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+    :root {
+        --bs-primary: #086164;         /* Teal */
+        --bs-secondary: #FF7A59;       /* Soft Coral */
+        --bs-light-bg: #F1F9F9;        /* Pale Teal background */
+        --bs-dark-bg: #adc6c7;         /* Deep Teal for footer/nav */
+        --bs-text-dark: #e8eaec;        /* Dark grey text */
+    }
+
+    body {
+        font-size: 0.85em;
+        font-family: 'Poppins', sans-serif;
+        background-color: #ffffff;
+        color: var(--bs-text-dark);
+    }
+
+    .section-padding {
+        padding: 40px 0;
+    }
+.mission-text {
+    color: #212529;
+    opacity: 1;
+    font-size: 0.95em;
+}
+    .display-4 { font-size: 2rem; }
+    .display-5 { font-size: 1.5rem; }
+    .display-6 { font-size: 1.25rem; }
+    h5.card-title { font-size: 0.95em; }
+
+    .text-primary { color: var(--bs-primary) !important; }
+    .text-secondary-accent { color: var(--bs-secondary) !important; }
+    .bg-primary { background-color: var(--bs-primary) !important; }
+    .bg-secondary-light { background-color: rgba(255, 122, 89, 0.1) !important; }
+
+    .btn-primary {
+        background-color: var(--bs-primary);
+        border-color: var(--bs-primary);
+        font-size: 0.85em;
+    }
+    .btn-primary:hover {
+        background-color: #005F61;
+        border-color: #005F61;
+    }
+
+    .btn-secondary {
+        background-color: var(--bs-secondary);
+        border-color: var(--bs-secondary);
+        color: #fff !important;
+        font-weight: 700;
+    }
+    .btn-secondary:hover {
+        background-color: #e66345;
+        border-color: #e66345;
+    }
+
+    .hero-section {
+        background: linear-gradient(rgba(47, 112, 112, 0.85), rgba(175, 216, 218, 0.85)), url('images/bg.png');
+        min-height: 70vh;
+        background-size: cover;
+        background-position: center;
+    }
+    .hero-section h1.display-4 { font-size: 2rem; }
+    .hero-section h2.display-5 { font-size: 1.35rem; }
+    .hero-section .lead { font-size: 0.9em; }
+
+    .feature-card {
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature-card i {
+        color: var(--bs-secondary) !important;
+        font-size: 2.25rem;
+    }
+    .feature-card p.card-text {
+        font-size: 0.85em;
+    }
+
+    .list-group-numbered .list-group-item {
+        border-left: 4px solid var(--bs-secondary);
+    }
+    .list-group-numbered .list-group-item::before {
+        font-size: 1.5rem;
+        color: var(--bs-primary);
+    }
+    .list-group-item p {
+        font-size: 0.85em;
+    }
+
+    .accordion-body {
+        border-bottom: 2px solid var(--bs-secondary);
+         font-size: 1.25em; 
+        font-weight: 700;
+    }
+    .accordion-item .badge {
+        font-size: 0.75em;
+    }
+
+    #contact .card {
+        border: 2px solid var(--bs-secondary);
+    }
+
+    footer {
+        background-color: var(--bs-dark-bg) !important;
+        color: #fff;
+    }
+    hr {
+    border-color: rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+}
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-smooth-scroll="true" tabindex="0">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-5 text-primary" href="#home">
+                <i class="bi bi-person-heart me-2"></i>ElderAssist
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active fw-semibold" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#problems">Needs</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#works">How It Works</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#impact">Impact</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-secondary text-dark ms-lg-3 px-4 rounded-pill" href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section" id="home">
+        <div class="container text-center py-5">
+            <h1 class="display-4 fw-bolder mb-3 animate__animated animate__fadeInDown">ElderAssist</h1>
+            <h2 class="display-5 mb-4 fw-normal">A Dedicated Service for the Elderly</h2>
+            <p class="lead mb-5 fs-6">“Because every elder deserves **care, safety & companionship**”</p>
+            
+            <a href="#contact" class="btn btn-secondary btn-lg me-3 px-5 fw-bold shadow-lg rounded-pill animate__animated animate__zoomIn">
+                <i class="bi bi-headset me-2"></i> Get Help Now
+            </a>
+            <a href="#services" class="btn btn-outline-light btn-lg px-5 fw-bold rounded-pill animate__animated animate__zoomIn">
+                <i class="bi bi-arrow-right-circle me-2"></i> View Services
+            </a>
+        </div>
+    </header>
+
+    <section class="section-padding" id="about">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bolder display-4 text-primary">About ElderAssist 👵👴</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                    
+                    <img src="images/caring_illustration.png" class="img-fluid rounded shadow-sm" alt="Illustration of caring for the elderly">
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-lg-4 rounded h-100">
+                        <p class="fs-6 text-muted">
+                            ElderAssist is more than just a service; it's a commitment. We are a dedicated platform, presented by **Apurva Amit Killedar**, aiming to bridge the critical gap in elderly care.
+                        </p>
+                        <hr class="text-primary my-4"> 
+                        <h3 class="h5 text-primary"><i class="bi bi-flag-fill me-2"></i>Our Mission</h3> 
+                        <p class="mission-text">
+    To ensure every elder lives with <strong>support, dignity, and companionship</strong>,
+    free from the daily struggles of mobility and isolation, and with the peace
+    of mind that <strong>help is always available 24/7</strong>.
+</p>
+                        <div class="alert bg-secondary-light text-center fw-bold border-0 text-dark" role="alert">
+                            Focused on Dignity, Safety, and Comprehensive Support.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: var(--bs-light-bg);" id="problems">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bolder display-6 text-primary">Key Challenges We Solve 🛡️</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 text-center p-3 feature-card">
+                        <div class="card-body">
+                            <i class="bi bi-person-walking display-3 text-secondary-accent mb-3"></i>
+                            <h5 class="card-title fw-bold">Mobility & Daily Tasks</h5>
+                            <p class="card-text text-muted">Difficulty with movement, errands, and routine household chores.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 text-center p-3 feature-card">
+                        <div class="card-body">
+                            <i class="bi bi-hospital display-3 text-secondary-accent mb-3"></i>
+                            <h5 class="card-title fw-bold">Emergency Help</h5>
+                            <p class="card-text text-muted">A critical lack of timely, 24/7 priority help in medical emergencies.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 text-center p-3 feature-card">
+                        <div class="card-body">
+                            <i class="bi bi-car-front-fill display-3 text-secondary-accent mb-3"></i>
+                            <h5 class="card-title fw-bold">Transportation</h5>
+                            <p class="card-text text-muted">Significant challenges for medical appointments or essential travel.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 text-center p-3 feature-card">
+                        <div class="card-body">
+                            <i class="bi bi-person-heart display-3 text-secondary-accent mb-3"></i>
+                            <h5 class="card-title fw-bold">Emotional Isolation</h5>
+                            <p class="card-text text-muted">Pervasive issue of loneliness and the need for regular, caring companionship.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <section class="section-padding" id="services">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bolder display-4 text-primary">Our Comprehensive Services 🛎️</h2>
+            <div class="accordion accordion-flush" id="servicesAccordion">
+
+                <div class="accordion-item shadow-sm mb-3 rounded">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <i class="bi bi-house-door-fill me-3 fs-5"></i> 1. Home Essentials Delivery
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <p class="fw-semibold">Solving the daily logistics with doorstep delivery (Click links below to navigate):</p>
+                            
+                            <a href="https://www.jiomart.com/" target="_blank" class="badge bg-success me-2">
+                                <i class="bi bi-bag-check-fill me-1"></i> Groceries
+                            </a>
+                            
+                            <a href="https://www.netmeds.com/" target="_blank" class="badge bg-success me-2">
+                                <i class="bi bi-prescription2 me-1"></i> Medicines
+                            </a>
+                            
+                            <a href="https://www.bigbasket.com/" target="_blank" class="badge bg-success">
+                                <i class="bi bi-basket-fill me-1"></i> Daily Needs
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item shadow-sm mb-3 rounded">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <i class="bi bi-heart-pulse-fill me-3 fs-5"></i> 2. Medical & Emergency Help
+                        </button>
+                    </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#servicesAccordion">
+        <div class="accordion-body">
+            <p class="fw-semibold">Priority response for urgent health needs.</p>
+            
+    <a 
+    href="skype:+919075075204?call" 
+    class="badge bg-danger fw-bold text-decoration-none me-2" 
+    style="font-size: 1em; padding: 0.5em 1em; cursor: pointer;"
+    title="Opens Skype to call +919075075204." 
+    onmouseover="this.title = 'Call: +919075075204 (Launches Skype)'"
+    onmouseout="this.title = 'Opens Skype to call +919075075204.'"
+>
+    <i class="bi bi-telephone-fill me-1"></i> **24/7 Emergency Hotline**
+</a>
+            <span class="badge text-dark me-2"><i class="bi bi-person-bounding-box me-1"></i> Doctor on Call</span> 
+            <span class="badge text-dark"><i class="bi bi-nurse-fill me-1"></i> Caretaker Visits</span> 
+        </div>
+    </div>
+
+                <div class="accordion-item shadow-sm mb-3 rounded">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <i class="bi bi-bus-front-fill me-3 fs-5"></i> 3. Transportation Assistance
+                        </button>
+                    </h2>
+                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#servicesAccordion">
+        <div class="accordion-body">
+            <p class="fw-semibold">Safe and reliable travel for essential needs (Click links below to navigate):</p>
+            
+            <a href="https://www.uber.com/in/en/ride/" target="_blank" class="badge bg-info fw-bold text-decoration-none me-2" style="font-size: 0.9em; padding: 0.45em 0.8em;">
+                <i class="bi bi-taxi-fill me-1"></i> Cab/Auto Booking
+            </a>
+            
+         <a href="escort-info.html" class="badge bg-info fw-bold text-decoration-none" ...>
+    <i class="bi bi-people-fill me-1"></i> Escort Service
+</a>
+            
+        </div>
+    
+                </div>
+                
+                <div class="accordion-item shadow-sm mb-3 rounded">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <i class="bi bi-tools me-3 fs-5"></i> 4. Household Help
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <p class="fw-semibold">Assistance with maintenance and chores.</p>
+                            <span class="badge bg-dark me-2"><i class="bi bi-broom-fill me-1"></i> Cleaning</span>
+                            <span class="badge bg-dark me-2"><i class="bi bi-wrench-adjustable me-1"></i> Repairs</span>
+                            <span class="badge bg-dark"><i class="bi bi-list-task me-1"></i> Small Chores</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item shadow-sm mb-3 rounded">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <i class="bi bi-chat-heart-fill me-3 fs-5"></i> 5. Companionship Programs
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <p class="fw-semibold">Combating isolation with meaningful interaction.</p>
+                            <span class="badge text-dark me-2"><i class="bi bi-people-fill me-1"></i> Group Activities</span>
+                            <span class="badge text-dark"><i class="bi bi-camera-video-fill me-1"></i> Video/Phone Chat Support</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <section class="section-padding" style="background-color: var(--bs-light-bg);" id="works">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <h2 class="mb-5 fw-bolder display-5 text-primary">How ElderAssist Works 🚀</h2>
+                    <div class="list-group list-group-numbered">
+                        <div class="list-group-item d-flex align-items-start feature-card p-3">
+                            <div>
+                                <h5 class="mb-1 fw-bold">Register or Call</h5>
+                                <p class="mb-0 text-muted">User registers via our easy-to-use app or calls the dedicated **24/7 helpline**.</p>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-start feature-card p-3">
+                             <div>
+                                <h5 class="mb-1 fw-bold">State Requirement</h5>
+                                <p class="mb-0 text-muted">Clearly state the problem or requirement (e.g., "Need delivery" or "**Emergency Medical Help**").</p>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-start feature-card p-3">
+                             <div>
+                                <h5 class="mb-1 fw-bold">Assignment & Dispatch</h5>
+                                <p class="mb-0 text-muted">The ElderAssist team **immediately assigns** the closest appropriate service provider.</p>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-start feature-card p-3">
+                             <div>
+                                <h5 class="mb-1 fw-bold">Track & Resolve</h5>
+                                <p class="mb-0 text-muted">Service is tracked in real-time until the need is fully met and the problem is solved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <h2 class="mb-4 fw-bolder display-5 text-primary">User Expectations ✨</h2>
+                    <ul class="list-group list-group-flush border rounded shadow-sm bg-white"> 
+                        <li class="list-group-item d-flex align-items-center fw-semibold py-3"><i class="bi bi-phone-fill me-3 text-secondary-accent fs-4"></i>Easy access via Phone/App</li> 
+                        <li class="list-group-item d-flex align-items-center fw-semibold py-3"><i class="bi bi-wallet-fill me-3 text-secondary-accent fs-4"></i>Affordable & Transparent Pricing</li> 
+                        <li class="list-group-item d-flex align-items-center fw-semibold py-3"><i class="bi bi-speedometer2 me-3 text-secondary-accent fs-4"></i>**Guaranteed Quick Response Time**</li> 
+                        <li class="list-group-item d-flex align-items-center fw-semibold py-3"><i class="bi bi-hand-thumbs-up-fill me-3 text-secondary-accent fs-4"></i>Friendly and Empathetic Staff</li> 
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="impact">
+        <div class="container text-center">
+            <h2 class="mb-5 fw-bolder display-4 text-primary">The ElderAssist Impact 📈</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card h-100 p-3 feature-card bg-light">
+                        <i class="bi bi-stars display-3 text-secondary-accent mb-3"></i>
+                        <h5 class="card-title fw-bold">Better Quality of Life</h5>
+                        <p class="card-text text-muted">Improved daily living, comfort, and independence for seniors.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 p-3 feature-card bg-light">
+                        <i class="bi bi-shield-lock-fill display-3 text-secondary-accent mb-3"></i>
+                        <h5 class="card-title fw-bold">Safety & Peace of Mind</h5>
+                        <p class="card-text text-muted">Assurance of timely help, reducing daily anxiety and worry.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 p-3 feature-card bg-light">
+                        <i class="bi bi-emoji-heart-eyes-fill display-3 text-secondary-accent mb-3"></i>
+                        <h5 class="card-title fw-bold">Reduced Loneliness</h5>
+                        <p class="card-text text-muted">Active companionship and essential social and community engagement.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 p-3 feature-card bg-light">
+                        <i class="bi bi-people-fill display-3 text-secondary-accent mb-3"></i>
+                        <h5 class="card-title fw-bold">Family Reassurance</h5>
+                        <p class="card-text text-muted">Gives family members abroad or nearby confidence in their elder's well-being.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section-padding bg-primary text-white" id="contact">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bolder display-4">Get In Touch Today 📞</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-lg p-4 border-0"> 
+                        <div class="card-body">
+                            <h3 class="card-title text-center mb-4 text-primary fw-bold">Submit Your Request</h3>
+                            <form action="submit_request.php" method="POST">
+                                <div class="row mb-3 g-3">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Name" required> 
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="number" class="form-control form-control-lg" id="age" name="age" placeholder="Age" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control form-control-lg" id="contact" name="contact" placeholder="Contact (Phone/Email)" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control form-control-lg" id="address" name="address" placeholder="Address" required>
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-select form-select-lg" id="serviceNeeded" name="serviceNeeded" required> 
+                                        <option value="" disabled selected>Select a Service</option>
+                                        <option value="Emergency Help">Emergency Help (24/7 Priority)</option>
+                                        <option value="Home Essentials Delivery">Home Essentials Delivery</option>
+                                        <option value="Transportation Assistance">Transportation Assistance</option>
+                                        <option value="Household Help">Household Help</option>
+                                        <option value="Companionship Program">Companionship Program</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <textarea class="form-control" id="problemDescription" name="problemDescription" rows="4" placeholder="Briefly Describe Your Problem..." required></textarea> 
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-secondary btn-lg fw-bold shadow text-dark">Submit Request</button>
+                                </div>
+                            </form>
+                            <hr class="my-4">
+
+                            <div class="text-center text-dark">
+                                <p class="fw-bold">Need Immediate Assistance? Call or Chat:</p>
+                                <p><i class="bi bi-phone me-2 text-primary fs-5"></i> Phone: **(999) 999-9999**</p>
+                                <p><i class="bi bi-envelope-fill me-2 text-primary fs-5"></i> Email: help@elderassist.com</p>
+      <a 
+    href="https://wa.me/919075075204?text=Hello!%20I%20have%20the%20following%20inquiry%3A%0A%0A%5BInsert%20User%27s%20Copied%20Question%20Here%5D%0A%0A---%20REQUIRED%20DETAILS%20---%0A1.%20Service%20Needed%20(e.g.%2C%20Escort%2C%20Cleaning%2C%20Medicines)%3A%0A2.%20Preferred%20Date%20%26%20Time%3A%0A3.%20Your%20Contact%20Name%3A%0A4.%20Elder%27s%20Location%3A%0A" 
+    class="btn btn-success btn-lg fw-bold" 
+    target="_blank" 
+    style="background-color: #25D366; border: none;"
+>
+    <i class="bi bi-whatsapp me-2"></i> Start a WhatsApp Chat
+</a>
+     </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark-bg text-white py-4">
+        <div class="container text-center">
+            <p class="mb-2">&copy; 2025 ElderAssist. All rights reserved. | <span class="text-secondary-accent fw-bold">Willingdon College, Sangli, India</span></p>
+            <div class="mt-3">
+                <a href="#" class="text-secondary-accent mx-3"><i class="bi bi-facebook fs-4"></i></a>
+                <a href="#" class="text-secondary-accent mx-3"><i class="bi bi-twitter fs-4"></i></a>
+                <a href="#" class="text-secondary-accent mx-3"><i class="bi bi-linkedin fs-4"></i></a>
+            </div>
+        </div>
+    </footer>
+<script>
+    // Initialize Tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script> 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
